@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    return view('welcome')->with([
+        'foo' => 'bar',
+        'tasks' => ['some task']
+    ]);
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
 });
